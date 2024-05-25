@@ -1,62 +1,53 @@
-# Concept Bootstrap 4 Admin Dashboard Template
-**Concept** is a responsive Bootstrap 4 admin template. It provides you with a collection of ready to use code snippets and utilities, custom pages, loads of charts, 4 different dashboard variations, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://colorlib.com/polygon/concept/index.html
+# Secure Financial Planning Website
 
-# Preview
+## Overview
+
+Welcome to the Secure Financial Planning website! This website is designed to provide you with tools and resources for managing your finances securely. It offers features such as age calculation, comfortable living expense estimation, bank statement upload, and more.
+
+## Preview
 
 ### Screenshot
 
-![Concept admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/concept-free-admin-dashboard-panel.jpg)
+![Secure Financial Planning Website Preview](screenshot.png)
 
-### Demo Site: [[Here]](https://colorlib.com/polygon/concept/index.html)
+### Demo
 
-### TOC
+You can view a live demo of the website [here](https://example.com).
+
+## Table of Contents
+
+- [Features](#features)
 - [Built With](#built-with)
-- [Changelog](#changelog)
-- [Authors](#authors)
+- [Usage](#usage)
+- [Contributing](#contributing)
 - [License](#license)
 
-### Built With
+## Features
 
-- Peity Charts
-- Sparklines
-- Scrollbar
-- TouchSpin
-- Data Table
-- JsTree
-- Skycons
-- Password Meter
-- PDF Viewer
-- Mapael
-- jvectormap
-- RangeSlider
-- Cropper
-- Data Map
-- CodeMirror
-- Chosen
-- C3 And D3
-- datetimepicker
-- x-editable
-- dropzonejs
-- form Validation
-- masked input
-- mockjax
-- lobibox
-- summernote
-- editable
+- Age calculation
+- Comfortable living expense estimation
+- Bank statement upload
+- Amount in SGD conversion
+- Expected returns calculation
 
-### Changelog
-#### V 1.0.0
-Initial Release
-### Authors
-[Colorlib](https://colorlib.com)
+## Built With
 
-### More info
-- [Bootstrap dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
-- [Free Admin Templates](https://colorlib.com/wp/free-admin-templates/)
-- [Free HTML templates](https://colorlib.com/wp/free-html-website-templates/)
-- [Bootstrap Templates](https://colorlib.com/wp/templates/)
-- [Free WordPress Themes](https://colorlib.com/wp/free-wordpress-themes/)
+- HTML5
+- CSS3 (Bootstrap for styling)
+- JavaScript (Bootstrap and custom scripts)
 
-### License
+## Usage
 
-Concept is licensed under The MIT License (MIT). Which means that you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the final products. But you always need to state that Colorlib is the original author of this template.
+To use this website, simply download the code or clone the repository to your local machine. Then, open the `index.html` file in your web browser.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+For more information about Bootstrap dashboards, admin templates, HTML templates, WordPress themes, and more, visit [Colorlib](https://colorlib.com).
