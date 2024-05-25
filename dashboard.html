@@ -12,6 +12,39 @@
     <link rel="stylesheet" href="./css/styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #callButtonContainer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        #callButton {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #callButton:hover {
+            background-color: red;
+            transform: scale(1.1);
+        }
+
+        #callButton i {
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,6 +88,13 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Call Button -->
+    <div id="callButtonContainer">
+        <button id="callButton" class="btn btn-primary">
+            <i class="fa-solid fa-phone"></i>
+        </button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

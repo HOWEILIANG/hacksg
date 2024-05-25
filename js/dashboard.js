@@ -108,4 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
   createStockMarketRatesChart();
   createReturnsChart();
   createDividendsChart();
+
+  // Call button functionality
+  const callButton = document.getElementById("callButton");
+
+  callButton.addEventListener("click", function () {
+    alert("Call is in progress");
+  });
 });
