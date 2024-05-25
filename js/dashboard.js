@@ -1,3 +1,4 @@
+/** 
 $(document).ready(function () {
   function createStockProportionChart() {
     var ctx = $("#stockProportionChart");
@@ -108,4 +109,43 @@ $(document).ready(function () {
   createStockPerformanceChart();
   createDividendYieldTrendChart();
   populateSelectedStockData();
+});
+*/
+
+$(document).ready(function () {
+  // Fetch data from Django backend
+  $.ajax({
+    url: "/path/to/your/django/view",
+    method: "GET",
+    success: function (data) {
+      // Parse the data (assuming it's JSON)
+      var parsedData = JSON.parse(data);
+
+      // Use the data to update your charts
+      updateStockProportionChart(parsedData.stockProportionData);
+      updateSelectedStockData(parsedData.selectedStockData);
+      updateStockPerformanceChart(parsedData.stockPerformanceData);
+      updateDividendYieldTrendChart(parsedData.dividendYieldTrendData);
+    },
+    error: function (error) {
+      console.log("Error:", error);
+    },
+  });
+
+  // Placeholder functions for updating your charts
+  function updateStockProportionChart(data) {
+    // Update your Stock Proportion chart with the provided data
+  }
+
+  function updateSelectedStockData(data) {
+    // Update your Selected Stock Data with the provided data
+  }
+
+  function updateStockPerformanceChart(data) {
+    // Update your Stock Performance chart with the provided data
+  }
+
+  function updateDividendYieldTrendChart(data) {
+    // Update your Dividend Yield Trend chart with the provided data
+  }
 });
