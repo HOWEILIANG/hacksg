@@ -178,3 +178,4 @@ $(document).ready(() => {
   $rangeInput.on("input", function () {
     $output.text("$" + $(this).val() + " (Monthly)");
   });
+});
