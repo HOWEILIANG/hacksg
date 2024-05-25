@@ -166,25 +166,19 @@ $("body").on("mousemove click touchstart touchmove", () =>
   myFunction(300, 15000)
 );
 
-// Initialize the cards on page load
+// Initialize the cards and other elements on page load
 $(document).ready(() => {
   initCards();
   addHammers();
-});
 
-$(document).ready(function () {
-  // Select the range input element by its ID
-  var $rangeInput = $("#comfort-amount");
-  // Select the output element
-  var $output = $("#comfort-amount-output");
+  // Handle range input changes
+  const $rangeInput = $("#comfort-amount");
+  const $output = $("#comfort-amount-output");
 
-  // Update the displayed value when the range input changes
   $rangeInput.on("input", function () {
     $output.text("$" + $(this).val() + " (Monthly)");
   });
-});
 
-$(document).ready(function () {
   // Simulate fetching data from the server or previous page
   const financialData = {
     totalReturn: "35%",
