@@ -177,3 +177,15 @@ $(document).ready(() => {
   initCards();
   addHammers();
 });
+
+$(document).ready(function () {
+  // Select the range input element by its ID
+  var $rangeInput = $("#comfort-amount");
+  // Select the output element
+  var $output = $("#comfort-amount-output");
+
+  // Update the displayed value when the range input changes
+  $rangeInput.on("input", function () {
+    $output.text("$" + $(this).val() + " (Monthly)");
+  });
+});
