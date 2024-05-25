@@ -5,126 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Preferences</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="tinder">
         <div class="tinder--status">
-            <i class="fa fa-arrow-right"></i>
-            <i class="fa fa-info"></i>
-            <i class="fa fa-arrow-left"></i>
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <i class="fa fa-info" aria-hidden="true"></i>
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </div>
 
         <div class="tinder--cards">
             <div class="tinder--card cover">
                 <img class="limitImg" src="https://assets.codepen.io/652/shania-pinnata-7E-vKgzahd8-unsplash.jpg"
-                    alt="spaghetti with pesto sauce and cherry tomatoes." title="Photo by Shania Pinnata">
-                <h3>Pasta with Pesto and Tomatoes</h3>
-                <div class="deets">
-                    <div class="servings">
-                        <i class="fbr fas fa-utensils"></i> <i class="fas fa-user"></i> <i class="fas fa-user"></i> <i
-                            class="fas fa-user"></i> <i class="fas fa-user"></i> <i class="fbr fas fa-utensils"></i>
+                    alt="Apple stock graph" title="Apple Stock">
+                <h3>Apple Inc. (AAPL)</h3>
+                <div class="details">
+                    <div class="returns">
+                        <p>1 Year Return: <span>+35%</span></p>
+                        <p>3 Year Return: <span>+120%</span></p>
+                        <p>5 Year Return: <span>+300%</span></p>
+                        <p>Dividend Yield: <span>1.2%</span></p>
                     </div>
-                    <br />
-                    <div class="cookTime">
-                        <i class="fbr fas fa-hourglass-half"></i> 25 min <i class="fbr fas fa-hourglass-half"></i>
+                    <div class="meter">
+                        <p>Recommendation Meter:</p>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 70%;"></div>
+                        </div>
+                        <p>Recommended to invest based on your mix.</p>
                     </div>
                 </div>
             </div>
             <div class="tinder--card about">
-                <h2>About</h2>
-                <p class="whyCook">This quick and delicious pasta dish is the perfect way to use up a summer bounty of
-                    basil and tomatoes!</p>
-                <br />
-                <br />
-                <img class="tomatos" src="https://assets.codepen.io/652/tamanna-rumee-nswz6tIpgZk-unsplash.jpg"
-                    alt="tomato halves surrounded by basil leaves and peppercorns." title="Photo by Tamanna Rume">
-                <p class="whyCook">Don't have a green thumb? Never fear! You can knock out this classic pasta dish in no
-                    time with a jar of prepared pesto sauce.</p>
+                <h2>About Apple Inc.</h2>
+                <p>Apple Inc. is an American multinational technology company headquartered in Cupertino, California,
+                    that designs, manufactures, and sells consumer electronics, computer software, and online services.
+                </p>
+                <img class="stock-images" src="https://assets.codepen.io/652/apple-products.jpg" alt="Apple products"
+                    title="Apple Products">
             </div>
 
-            <div class="tinder--card ingredients">
-                <h2>Ingredients</h2>
-                <ul class="fa-ul ingredients">
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>8 oz. spaghetti or linguine pasta</li>
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>2 cups fresh basil leaves, plus 4-8
-                        reserved leaves for garnish</li>
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>2 cloves garlic</li>
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>2 tbsp. pine nuts or blanched almonds
-                    </li>
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>1/2 cup olive oil</li>
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>1/2 cup grated Parmesan cheese, plus 2
-                        tbsp. for garnish.</li>
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>1/8 tsp salt</li>
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>1 pint cherry tomatoes</li>
-                    <li><span class="fa-li"><i class="fas fa-seedling"></i></span>1 tsp olive oil</li>
-                </ul>
-                <br />
-                <div class="variation">
-                    Variation: Got no time, or no fresh basil? Use a 6 ounce jar of prepared pesto instead.
-                    <!-- 				<br />
-                    <i class="ingInfo fas fa-info-circle fa-spin"></i>
-                    <br />
-                    <i class="ingInfoArr fas fa-arrow-down"></i> -->
-                </div>
+            <div class="tinder--card additional-info">
+                <h2>Additional Information</h2>
+                <p>Market Cap: <span>$2.4 Trillion</span></p>
+                <p>P/E Ratio: <span>28.5</span></p>
+                <p>EPS: <span>$5.61</span></p>
+                <p>52 Week High: <span>$150</span></p>
+                <p>52 Week Low: <span>$100</span></p>
             </div>
 
-            <div class="tinder--card process">
-                <h2>Process</h2>
-                <ul class="fa-ul process">
-                    <li><span class="fa-li"><i class="fas fa-thermometer-three-quarters"></i></span>Bring 4 quarts of
-                        water to a rolling boil in a large pot. Salt the water generously and add the pasta.</li>
-                    <li><span class="fa-li"><i class="fas fa-clock"></i></span>While the pasta cooks, make the pesto. <i
-                            class="white fas fa-info-circle fa-spin"></i></li>
-                    <li><span class="fa-li"><i class="fas fa-thermometer-quarter"></i></span>Heat a large skillet over
-                        medium heat.</li>
-                    <li><span class="fa-li"><i class="fas fa-plus"></i></span>Add the 1/2 tsp. olive oil to the heated
-                        skillet.</li>
-                    <li><span class="fa-li"><i class="fas fa-plus"></i></span>Add the cherry tomatoes to the skillet and
-                        let them blister, stirring occasionally and gently so they don't burst.</li>
-                    <li><span class="fa-li"><i class="fas fa-minus"></i></span>Remove tomatoes from the pan and set
-                        aside.</li>
-                    <li><span class="fa-li"><i class="fas fa-tint"></i></span>Drain the pasta, reserving 1/4 cup of the
-                        cooking water.</li>
-                    <li><span class="fa-li"><i class="fas fa-undo-alt"></i></span>Return the pasta to the pot</li>
-                    <li><span class="fa-li"><i class="fas fa-plus"></i></span>Add the reserved cooking water and pesto
-                        to the pasta and stir to mix</li>
-                    <li><span class="fa-li"><i class="fas fa-circle"></i></span>Plate the pasta and add 6-8 tomatoes to
-                        each plate</li>
-                    <li><span class="fa-li"><i class="fas fa-leaf"></i></span>Garnish with reserved basil leaves and
-                        Parmesean and serve. Buon Appetito!</li>
+            <div class="tinder--card bonds">
+                <h2>Bond Investment</h2>
+                <p>Bonds can provide stability to your portfolio. Based on your current stock holdings, we recommend the
+                    following bonds:</p>
+                <ul>
+                    <li>US Treasury Bonds</li>
+                    <li>Corporate Bonds</li>
+                    <li>Municipal Bonds</li>
                 </ul>
             </div>
 
+            <div class="tinder--card cash">
+                <h2>Cash Holdings</h2>
+                <p>Maintaining a portion of your portfolio in cash can help you manage liquidity and risk. We recommend
+                    holding 10% of your portfolio in cash.</p>
+            </div>
         </div>
 
         <div class="tinder--buttons">
-            <button id="nope"><i class="fa fa-arrow-left"></i></button>
-            <button id="info" title="How to make Pesto!"><i class="fa fa-info"></i></button>
-            <button id="love"><i class="fa fa-arrow-right"></i></button>
+            <button id="nope"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+            <button id="info" title="More Info"><i class="fa fa-info" aria-hidden="true"></i></button>
+            <button id="love"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
 
         <div class="tinder--info">
             <div class="bg">
-                <i class="infoIcon fas fa-info-circle"></i>
-                <h2>Make Pesto</h2>
+                <i class="infoIcon fas fa-info-circle" aria-hidden="true"></i>
+                <h2>More Details</h2>
             </div>
-
             <br />
             <ul class="fa-ul info">
-                <li><span class="fa-li"><i class="fas fa-minus"></i></span>Remove stems from basil leaves.</li>
-                <li><span class="fa-li"><i class="fas fa-blender"></i></span>Put the basil, garlic, and pine nuts or
-                    almonds into the bowl of a food processor and pulse it a few times to chop them up.</li>
-                <li><span class="fa-li"><i class="fas fa-blender"></i></span>Then, turn the food processor on and
-                    <b>slowly</b> pour the olive oil through the feeder tube to blend with the chopped herbs and nuts.
-                </li>
-                <li><span class="fa-li"><i class="fas fa-plus"></i></span>Process until all ingredients are fully
-                    blended, stopping the food processor to scrape down the sides occasionally to get it all mixed.</li>
-                <li><span class="fa-li"><i class="fas fa-power-off"></i></span>Turn off the food processor, and add the
-                    salt and Parmesean, then pulse a few times to blend.</li>
+                <li><span class="fa-li"><i class="fas fa-info-circle" aria-hidden="true"></i></span>Market Cap:
+                    <span>$2.4 Trillion</span></li>
+                <li><span class="fa-li"><i class="fas fa-info-circle" aria-hidden="true"></i></span>P/E Ratio:
+                    <span>28.5</span></li>
+                <li><span class="fa-li"><i class="fas fa-info-circle" aria-hidden="true"></i></span>EPS:
+                    <span>$5.61</span></li>
+                <li><span class="fa-li"><i class="fas fa-info-circle" aria-hidden="true"></i></span>52 Week High:
+                    <span>$150</span></li>
+                <li><span class="fa-li"><i class="fas fa-info-circle" aria-hidden="true"></i></span>52 Week Low:
+                    <span>$100</span></li>
             </ul>
             <button class="closeMe">
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             <div class="covering"></div>
         </div>
@@ -145,6 +119,7 @@
             </g>
         </svg>
     </div>
+
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
