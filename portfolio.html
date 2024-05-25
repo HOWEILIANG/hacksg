@@ -117,7 +117,10 @@
             /* Set card background color */
             transition: transform 0.3s ease-in-out;
             cursor: pointer;
-            z-index: 1;
+
+            z-index: function(index) {
+                return allCards.length - index;
+            }
         }
 
 

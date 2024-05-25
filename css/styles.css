@@ -34,3 +34,15 @@ label {
 .btn-primary:hover {
   background-color: #ff0000;
 }
+
+/* This is your hamburger icon */
+.hamburger-icon {
+  display: block; /* visible on small screens */
+}
+
+/* This will apply if the viewport is larger than 768px */
+@media screen and (min-width: 768px) {
+  .hamburger-icon {
+    display: none; /* hidden on larger screens */
+  }
+}

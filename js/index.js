@@ -17,8 +17,8 @@ function initCards() {
 
   $newCards.each(function (index) {
     $(this).css({
-      zIndex: allCards.length - index,
-      transform: `scale(${(20 - index) / 20}) translateY(-${50 * index}px)`,
+      zIndex: $newCards.length - index,
+      transform: `translateY(-${index * 20}px)`,
     });
   });
 
@@ -181,5 +181,60 @@ $(document).ready(function () {
   // Update the displayed value when the range input changes
   $rangeInput.on("input", function () {
     $output.text("$" + $(this).val() + " (Monthly)");
+  });
+});
+
+$(document).ready(function () {
+  // Simulate fetching data from the server or previous page
+  const financialData = {
+    totalReturn: "35%",
+    annualReturn: "12%",
+    dividendYield: "1.2%",
+    allocation: {
+      stocks: 60,
+      bonds: 30,
+      cash: 10,
+    },
+  };
+
+  // Populate the data in the cards
+  $("#totalReturn").text(financialData.totalReturn);
+  $("#annualReturn").text(financialData.annualReturn);
+  $("#dividendYield").text(financialData.dividendYield);
+
+  // Create the investment allocation chart
+  const ctx = $("#allocationChart")[0].getContext("2d");
+  new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: ["Stocks", "Bonds", "Cash"],
+      datasets: [
+        {
+          data: [
+            financialData.allocation.stocks,
+            financialData.allocation.bonds,
+            financialData.allocation.cash,
+          ],
+          backgroundColor: ["#007bff", "#28a745", "#ffc107"],
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top",
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              const label = context.label || "";
+              const value = context.raw || 0;
+              return `${label}: ${value}%`;
+            },
+          },
+        },
+      },
+    },
   });
 });
