@@ -48,7 +48,7 @@ function addNewCard(thisCard) {
   }, 300);
 }
 
-// Initialize Hammer.js
+// Initialize Hammer.js on each card
 function addHammers() {
   allCards = $(".tinder--card");
 
@@ -58,18 +58,15 @@ function addHammers() {
     hammertime.on("pan", (event) => {
       $(this).addClass("moving");
       if (event.deltaX === 0) return;
-      if (event.center.x === 0 && event.center.y === 0) return;
 
       $tinderContainer.toggleClass("tinder_love", event.deltaX > 0);
       $tinderContainer.toggleClass("tinder_nope", event.deltaX < 0);
 
-      const xMulti = event.deltaX * 0.03;
-      const yMulti = event.deltaY / 80;
-      const rotate = xMulti * yMulti;
+      const rotate = event.deltaX * 0.03;
 
       $(event.target).css(
         "transform",
-        `translate(${event.deltaX}px, ${event.deltaY}px) rotate(${rotate}deg)`
+        `translate(${event.deltaX}px) rotate(${rotate}deg)`
       );
     });
 
@@ -77,7 +74,6 @@ function addHammers() {
       $(this).removeClass("moving");
       $tinderContainer.removeClass("tinder_love tinder_nope");
 
-      const moveOutWidth = $("body").width();
       const keep =
         Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
 
@@ -85,17 +81,15 @@ function addHammers() {
         $(event.target).css("transform", "");
       } else {
         const endX = Math.max(
-          Math.abs(event.velocityX) * moveOutWidth,
-          moveOutWidth
+          Math.abs(event.velocityX) * $("body").width(),
+          $("body").width()
         );
         const toX = event.deltaX > 0 ? endX : -endX;
-        const endY = Math.abs(event.velocityY) * moveOutWidth;
-        const toY = event.deltaY > 0 ? endY : -endY;
-        const rotate = event.deltaX * 0.03 * (event.deltaY / 80);
+        const rotate = event.deltaX * 0.03;
 
         $(event.target).css(
           "transform",
-          `translate(${toX}px, ${toY + event.deltaY}px) rotate(${rotate}deg)`
+          `translate(${toX}px) rotate(${rotate}deg)`
         );
         $(event.target).addClass("removed");
 

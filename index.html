@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <h2 class="text-center mb-4">Enter Your Information</h2>
-                <form>
+                <form action="portfolio.html" method="post">
                     <div class="form-group mb-3">
                         <label for="age">Age:</label>
                         <input type="number" class="form-control" id="age" placeholder="Enter your age">
@@ -65,6 +65,17 @@
                         <label for="expected-returns">Expected Returns (%):</label>
                         <input type="number" class="form-control" id="expected-returns"
                             placeholder="Enter expected returns (1-12)">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="risk-appetite">Risk Appetite:</label>
+                        <select class="form-select" id="risk-appetite" name="risk-appetite" required>
+                            <option value="" selected disabled>Select Risk Appetite</option>
+                            <option value="Very Low">Very Conservative</option>
+                            <option value="Low">Conservative</option>
+                            <option value="Medium">Moderate</option>
+                            <option value="High">Aggressive</option>
+                            <option value="Very High">Very Aggressive</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Submit</button>
                 </form>
