@@ -1,65 +1,111 @@
-// Assume you have a function to fetch data from the backend
-function fetchData(stockSymbol) {
-  // AJAX call to fetch data for the selected stock symbol
-  // Replace this with your actual AJAX call to fetch data
-  $.ajax({
-    url: "backend_endpoint_url",
-    method: "GET",
-    data: { symbol: stockSymbol },
-    success: function (response) {
-      // Assuming response contains data for the selected stock
-      // Update the table with selected stock data
-      updateSelectedStockData(response);
-      // Update the pie chart with stock proportions
-      updateStockProportionChart(response.stockProportions);
-      // Update the stock performance chart
-      updateStockPerformanceChart(response.stockPerformanceData);
-      // Update the dividend yield trend chart
-      updateDividendYieldTrendChart(response.dividendYieldTrendData);
-    },
-    error: function (xhr, status, error) {
-      console.error("Error fetching data:", error);
-    },
-  });
-}
-
-// Function to update the table with selected stock data
-function updateSelectedStockData(data) {
-  // Assuming 'selectedStockData' is the ID of the div for the table
-  var tableContent =
-    '<table class="table"><thead><tr><th>Attribute</th><th>Value</th></tr></thead><tbody>';
-  // Loop through data and add rows to the table
-  for (var key in data) {
-    tableContent += "<tr><td>" + key + "</td><td>" + data[key] + "</td></tr>";
-  }
-  tableContent += "</tbody></table>";
-  $("#selectedStockData").html(tableContent);
-}
-
-// Function to update the pie chart with stock proportions
-function updateStockProportionChart(stockProportions) {
-  // Assuming 'stockProportionChart' is the ID of the canvas for the chart
-  // Use Chart.js to create/update the pie chart
-}
-
-// Function to update the stock performance chart
-function updateStockPerformanceChart(stockPerformanceData) {
-  // Assuming 'stockPerformanceChart' is the ID of the canvas for the chart
-  // Use Chart.js to create/update the line chart
-}
-
-// Function to update the dividend yield trend chart
-function updateDividendYieldTrendChart(dividendYieldTrendData) {
-  // Assuming 'dividendYieldTrendChart' is the ID of the canvas for the chart
-  // Use Chart.js to create/update the line chart
-}
-
-// Example of triggering the fetchData function based on user input (e.g., selecting a stock symbol)
 $(document).ready(function () {
-  // Assuming there's an input field with the ID 'stockSymbolInput' for entering the stock symbol
-  $("#stockSymbolInput").on("change", function () {
-    var stockSymbol = $(this).val();
-    // Call fetchData function with the selected stock symbol
-    fetchData(stockSymbol);
-  });
+  function createStockProportionChart() {
+    var ctx = $("#stockProportionChart");
+    var stockProportionChart = new Chart(ctx, {
+      type: "pie",
+      data: {
+        labels: ["Stock A", "Stock B", "Stock C"],
+        datasets: [
+          {
+            label: "Stock Proportion",
+            data: [30, 40, 30], // Sample data
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.5)",
+              "rgba(54, 162, 235, 0.5)",
+              "rgba(255, 206, 86, 0.5)",
+            ],
+            borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
+    });
+  }
+
+  function createStockPerformanceChart() {
+    var ctx = $("#stockPerformanceChart");
+    var stockPerformanceChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        datasets: [
+          {
+            label: "Stock Performance",
+            data: [100, 120, 110, 130, 125, 140], // Sample data
+            backgroundColor: "rgba(54, 162, 235, 0.5)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
+    });
+  }
+
+  function createDividendYieldTrendChart() {
+    var ctx = $("#dividendYieldTrendChart");
+    var dividendYieldTrendChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["2019", "2020", "2021", "2022", "2023", "2024"],
+        datasets: [
+          {
+            label: "Dividend Yield Trend",
+            data: [5, 6, 7, 6, 8, 7], // Sample data
+            backgroundColor: "rgba(255, 206, 86, 0.5)",
+            borderColor: "rgba(255, 206, 86, 1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  }
+
+  function populateSelectedStockData() {
+    var selectedStockData = $("#selectedStockData");
+    var data = [
+      { stock: "Stock A", price: "$100", change: "+2.5%" },
+      { stock: "Stock B", price: "$120", change: "-1.2%" },
+      { stock: "Stock C", price: "$90", change: "+3.8%" },
+    ];
+    var table =
+      '<table class="table"><thead><tr><th>Stock</th><th>Price</th><th>Change</th></tr></thead><tbody>';
+    $.each(data, function (index, item) {
+      table +=
+        "<tr><td>" +
+        item.stock +
+        "</td><td>" +
+        item.price +
+        "</td><td>" +
+        item.change +
+        "</td></tr>";
+    });
+    table += "</tbody></table>";
+    selectedStockData.html(table);
+  }
+
+  createStockProportionChart();
+  createStockPerformanceChart();
+  createDividendYieldTrendChart();
+  populateSelectedStockData();
 });

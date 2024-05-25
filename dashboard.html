@@ -16,6 +16,20 @@
         .card {
             margin-bottom: 20px;
         }
+
+        /* Define fixed height for chart containers */
+        .chart-container {
+            height: 600px;
+            /* Adjust the height as needed */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+        }
+
+        /* Ensure canvas elements have fixed height */
+        canvas {
+            height: 100% !important;
+            width: 100% !important;
+        }
     </style>
 </head>
 
@@ -43,40 +57,44 @@
         </div>
     </nav>
 
+    <h1 style="text-align: center;">My Financial Overview</h1>
+
     <div class="container mt-4">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
+            <!-- Chart containers -->
+            <div class="col-md-6">
+                <div class="card chart-container">
                     <div class="card-body">
-                        <h5 class="card-title">Total Return</h5>
-                        <p class="card-text" id="totalReturn">Loading...</p>
+                        <h5 class="card-title">Stock Proportion</h5>
+                        <canvas id="stockProportionChart"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-6">
+                <div class="card chart-container">
                     <div class="card-body">
-                        <h5 class="card-title">Annual Return</h5>
-                        <p class="card-text" id="annualReturn">Loading...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Dividend Yield</h5>
-                        <p class="card-text" id="dividendYield">Loading...</p>
+                        <h5 class="card-title">Selected Stock Data</h5>
+                        <div id="selectedStockData">
+                            <!-- Table to be dynamically populated -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card chart-container">
                     <div class="card-body">
-                        <h5 class="card-title">Investment Allocation</h5>
-                        <canvas id="allocationChart"></canvas>
+                        <h5 class="card-title">Stock Performance</h5>
+                        <canvas id="stockPerformanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card chart-container">
+                    <div class="card-body">
+                        <h5 class="card-title">Dividend Yield Trend</h5>
+                        <canvas id="dividendYieldTrendChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -91,7 +109,9 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JavaScript -->
     <script defer src="js/uservalidation.js"></script>
+    <script defer src="js/dashboard.js"></script>
     <script defer src="js/index.js"></script>
 </body>
 
