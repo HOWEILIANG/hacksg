@@ -33,6 +33,8 @@ $(document).ready(function () {
     // If all validations pass, you can proceed with form submission or other actions
     alert("Registration successful!");
     // Here you can send the form data to your backend for further processing
+    // Redirect to index.html
+    window.location.href = "index.html";
   });
 
   $(document).ready(function () {
