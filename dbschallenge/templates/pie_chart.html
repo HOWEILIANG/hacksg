@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+    {% block title %}Pie Chart Example{% endblock %}
+
+{% block content %}
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+<script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/v/bs5/dt-2.0.7/datatables.min.js"></script>
+<link href="https://cdn.datatables.net/v/dt/dt-2.0.7/datatables.min.css" rel="stylesheet">
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                Stock Percentages
+            </div>
+            <div class="card-body">
+                <canvas id="myPieChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                Returns
+            </div>
+            <div class="card-body">
+                <canvas id="returnsChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card mb-12">
+            <div class="card-header">
+                DBS's Believe it or NOT Lah!
+            </div>
+
+            <div class="card-body">
+                The compounded amount based on the current inflation numbers, you would be requiring <strong>{{total_needed}}</strong> for your retirement
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Call button -->
+{% if user_profile.mobile %}
+<div id="callButtonContainer">
+    <form action="{% url 'call' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="pk" value="{{ user_profile.pk }}">
+
+        <button id="callButton" class="btn btn-primary" type="submit">
+            <i class="fa-solid fa-phone"></i>
+        </button>
+    </form>
+</div>
+{% endif %}
+
+    Stocks
+        {{ html_table | safe }}
+
+
+    <script>
+        new DataTable('#myTable');
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+        var ctx = document.getElementById("returnsChart").getContext("2d");
+        var returnsChart = new Chart(ctx, {
+            type: "line",
+            data: {
+            labels: {{year}},
+            datasets: [
+                {
+                label: "Inflation Rate",
+                data: {{inflation_rate}}, // Example data
+                backgroundColor: "rgba(255, 99, 132, 0.5)",
+                borderColor: "rgba(255, 99, 132, 1)",
+                borderWidth: 1,
+                },
+            ],
+            },
+            options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            },
+        });
+
+
+            var allocations = {
+                'cash': {{allocation.cash}},
+                'bonds': {{allocation.bonds}},
+                'reits': {{allocation.reits}},
+                'stocks': {{allocation.stocks}},
+            };
+
+            var labels = Object.keys(allocations);
+            var data = Object.values(allocations);
+
+            var ctx = document.getElementById('myPieChart').getContext('2d');
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Portfolio Allocation'
+                    },
+                    maintainAspectRatio: false,
+
+                }
+            });
+        });
+
+        const callButton = document.getElementById("callButton");
+
+    callButton.addEventListener("click", function () {
+    alert("Call is in progress");
+    });
+
+    </script>
+{% endblock  %}

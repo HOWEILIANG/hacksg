@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{%block title%}User Input Form{% endblock %}
+
+{% block content %}
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Enter Your Financial Information</h2>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </form>
+
+                        <!-- <form action="" method="post">
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Age</label>
+                                <input type="number" class="form-control" id="age" placeholder="Enter your age">
+                            </div>
+                            <div class="mb-3">
+                                <label for="comfort-amount" class="form-label">Amount to live comfortably</label>
+                                <input type="range" class="form-range" id="comfort-amount" min="0" max="20000"
+                                    step="100" value="5000">
+                                <output for="comfort-amount" id="comfort-amount-output">$5000</output>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="bank-statement" class="form-label">Upload Bank Statement</label>
+                                <input type="file" class="form-control-file" id="bank-statement">
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount-sgd" class="form-label">Amount in SGD</label>
+                                <input type="number" class="form-control" id="amount-sgd"
+                                    placeholder="Enter amount in SGD">
+                            </div>
+                            <div class="mb-3">
+                                <label for="expected-returns" class="form-label">Expected Returns (%)</label>
+                                <input type="number" class="form-control" id="expected-returns"
+                                    placeholder="Enter expected returns (1-12)">
+                            </div>
+                            <div class="mb-3">
+                                <label for="risk-appetite" class="form-label">Risk Appetite</label>
+                                <select class="form-select" id="risk-appetite" name="risk-appetite" required>
+                                    <option value="" selected disabled>Select Risk Appetite</option>
+                                    <option value="Very Low">Very Conservative</option>
+                                    <option value="Low">Conservative</option>
+                                    <option value="Medium">Moderate</option>
+                                    <option value="High">Aggressive</option>
+                                    <option value="Very High">Very Aggressive</option>
+                                </select>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
